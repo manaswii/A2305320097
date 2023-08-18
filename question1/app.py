@@ -43,7 +43,7 @@ def getTrains():
     # sorting of trains
 
     print(filteredTrains)
-    # newList = sorted(filteredTrains, key=lambda x: (x.price.sleeper,-(x.seatsAvailable.sleeper+x.seatsAvailable.AC),x.departureTime.Hours,x.departureTime.Minutes,x.departureTime.Seconds))
-    return filteredTrains
+    newList = sorted(filteredTrains, key=lambda x: (x['price']['sleeper'],-(x['seatsAvailable']['sleeper']+x['seatsAvailable']['AC']),x['departureTime']['Hours'],x['departureTime']['Minutes'],x['departureTime']['Seconds']))
+    return newList
 
     # sort according to asc price, desc order of tickets, desc departure time (include delay)
