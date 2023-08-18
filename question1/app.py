@@ -27,6 +27,8 @@ def getTrains():
             time['Minutes']-=60
             time['Hours']+=1
 
+        train['updatedTime']=time
+
         # print(time["Hours"])
         # Accounting for next 30minutes
         # filteredTrains.append(train)
@@ -43,7 +45,7 @@ def getTrains():
     # sorting of trains
 
     print(filteredTrains)
-    newList = sorted(filteredTrains, key=lambda x: (x['price']['sleeper'],-(x['seatsAvailable']['sleeper']+x['seatsAvailable']['AC']),x['departureTime']['Hours'],x['departureTime']['Minutes'],x['departureTime']['Seconds']))
+    newList = sorted(filteredTrains, key=lambda x: (x['price']['sleeper'],-(x['seatsAvailable']['sleeper']+x['seatsAvailable']['AC']),x['updatedTime']['Hours'],x['updatedTime']['Minutes'],x['updatedTime']['Seconds']))
     return newList
 
     # sort according to asc price, desc order of tickets, desc departure time (include delay)
